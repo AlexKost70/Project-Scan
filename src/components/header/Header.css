@@ -1,0 +1,127 @@
+header {
+    height: 93px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 17px;
+    justify-content: space-between;
+}
+
+header .right-side {
+    display: flex;
+}
+
+header nav {
+    display: flex;
+    gap: 49px;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #000000;
+}
+
+header .profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    margin-left: 291px;
+}
+
+header .profile .divider {
+    display: inline-block;
+    content: "";
+    width: 2px;
+    height: 26px;
+    background: #029491;
+    opacity: 0.6;
+    margin: 0 20px 0 18px;
+}
+
+header .profile .signin {
+    font-weight: 500;
+    display: inline-block;
+    background: #7CE3E1;
+    width: 65px;
+    height: 26px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .profile-signedup {
+    margin-left: 125px;
+}
+
+header .profile .stats {
+    font-size: 10px;
+    line-height: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    width: 175px;
+    min-width: 175px;
+    height: 63px;
+    background: rgba(217, 217, 217, 0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .profile .stats img {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+header .profile .stats span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 1);
+    display: inline-block;
+    width: 27px;
+    margin-left: 9px;
+    margin-right: 8px;
+    text-align: left;
+}
+
+header .profile .stats p:nth-child(2) span {
+    color: #8AC540;
+    margin-top: 2px;
+}
+
+header .profile .info {
+    display: flex;
+    width: 239px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .profile .info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 4px;
+}
+
+header .profile .info a {
+    font-size: 10px;
+    line-height: 12px;
+    color: #000000;
+    opacity: 0.4;
+}
