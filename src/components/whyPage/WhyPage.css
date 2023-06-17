@@ -1,3 +1,13 @@
+.whyblock {
+    padding-bottom: 107px;
+}
+
 .whyblock .title {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+}
+
+.whyblock > img {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
 }
