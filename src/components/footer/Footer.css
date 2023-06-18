@@ -1,0 +1,35 @@
+footer {
+    background: #029491;
+    height: 137px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+footer .right-side address {
+    margin-bottom: 21px;
+    font-style: normal;
+}
+
+footer .right-side a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer .right-side p {
+    font-size: 12px;
+    line-height: 15px;
+}

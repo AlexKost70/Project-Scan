@@ -1,10 +1,13 @@
 main {
     margin-top: 69px;
     padding-bottom: 199px;
+}
+
+main .wrapper {
     display: flex;
     background-image: url("./main.png");
     background-repeat: no-repeat;
-    background-position: 100% -34.1%;
+    background-position: 100% 29%;
     background-size: 629px 593px;
 }
 

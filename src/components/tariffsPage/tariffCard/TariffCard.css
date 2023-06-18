@@ -1,0 +1,102 @@
+.card {
+    width: 415px;
+    height: 540px;
+    font-size: 18px;
+    line-height: 22px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.card .card-header {
+    display: flex;
+    justify-content: space-between;
+    height: 132px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card .card-header .left {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.card .card-title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 10px;
+}
+
+.card-header img {
+    width: 92px;
+    height: 83px;
+    margin-top: 15px;
+    margin-right: 16px;
+}
+
+.card-main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 33px;
+    padding-left: 30px;
+}
+
+.card-main .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 134px;
+    height: 24px;
+    background: #3BA5E0;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    align-self: flex-end;
+    margin-top: -24.5px;
+    margin-right: 10px;
+}
+
+.card-main .price {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-main .price span {
+    margin-left: 19px;
+    font-size: 25px;
+    line-height: 30px;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.card-main .installments {
+    margin-bottom: -22px;
+}
+
+.card-main .includes {
+    margin-top: 91px;
+    margin-bottom: 10px;
+}
+
+.card-main .includes-list {
+    padding-left: 0;
+}
+
+.card-main li {
+    background: url('./checkmark.png') no-repeat left center;
+    background-size: 20px 20px;
+    padding-left: 25px;
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.card-main .button {
+    margin-top: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}

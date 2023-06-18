@@ -5,9 +5,9 @@ import "./Header.css";
 
 export default function Header() {
     return(
-        <div className="wrapper">
-            <header>
-                <img src={logo} />
+        <header>
+            <div className="wrapper">
+                <img src={logo} alt="Логотип компании СКАН" />
                 <div className="right-side">
                     <nav>
                         <a href="#">Главная</a>
@@ -40,7 +40,7 @@ export default function Header() {
                         )
                     }
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
     )
 }

@@ -1,0 +1,12 @@
+.tariffsblock {
+    padding-bottom: 118px;
+}
+
+.tariffsblock .title {
+    margin-bottom: 70px;
+}
+
+.tariffsblock .cards {
+    display: flex;
+    justify-content: space-between;
+}

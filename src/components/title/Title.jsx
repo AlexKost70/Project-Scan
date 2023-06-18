@@ -2,7 +2,7 @@ import React from "react";
 
 export default class Title extends React.Component {
     render() {
-        const {type, children, fontSize, lineHeight, className} = this.props;
+        const {type, children, fontSize, lineHeight} = this.props;
 
         const styles = {
             fontSize: fontSize, 

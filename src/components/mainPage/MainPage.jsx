@@ -5,8 +5,8 @@ import "./MainPage.css";
 
 export default function Main() {
     return(
-        <div className="wrapper">
-            <main>
+        <main>
+            <div className="wrapper">
                 <div className="left-side">
                     <Title 
                         type="h1" 
@@ -16,7 +16,7 @@ export default function Main() {
                     <p className="desc">Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</p>
                     <Button type="button" disabled={false} stylization="primary">Запросить данные</Button>
                 </div>
-            </main> 
-        </div>
+            </div> 
+        </main>
     )
 }
