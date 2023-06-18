@@ -1,9 +1,9 @@
-main {
+.mainpage {
     margin-top: 69px;
     padding-bottom: 199px;
 }
 
-main .wrapper {
+.mainpage .wrapper {
     display: flex;
     background-image: url("./main.png");
     background-repeat: no-repeat;
@@ -11,12 +11,12 @@ main .wrapper {
     background-size: 629px 593px;
 }
 
-main .title {
+.mainpage .title {
     max-width: 715px;
     margin-bottom: 20px;
 }
 
-main p {
+.mainpage p {
     font-size: 20px;
     line-height: 24px;
     max-width: 540px;

@@ -5,7 +5,7 @@ import "./MainPage.css";
 
 export default function Main() {
     return(
-        <main>
+        <main className="mainpage">
             <div className="wrapper">
                 <div className="left-side">
                     <Title 
