@@ -6,12 +6,13 @@ import WhyPage from './components/whyPage/WhyPage';
 import Footer from './components/footer/Footer';
 import AuthPage from './components/authPage/AuthPage';
 import SearchPage from './components/searchPage/SearchPage';
+import ResultsPage from './components/resultsPage/ResultsPage';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <SearchPage />
+      <ResultsPage />
       <Footer />
     </div>
   );

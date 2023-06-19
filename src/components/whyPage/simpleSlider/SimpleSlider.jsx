@@ -8,11 +8,9 @@ import slide1 from './slide1.png';
 import slide2 from './slide2.png';
 import slide3 from './slide3.png';
 
-// Install Swiper modules
 SwiperCore.use([Navigation]);
 
 const SimpleSlider = () => {
-  // Sample data for slides
     const slides = [ 
         { id: 1, img: slide1, text: 'Высокая и оперативная скорость обработки заявки' },
         { id: 2, img: slide2, text: 'Огромная комплексная база данных, обеспечивающая объективный ответ на запрос' },
