@@ -18,3 +18,38 @@ button:disabled {
   max-width: 1340px;
   margin: 0 auto;
 }
+
+@media (max-width: 1370px) {
+  .wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+}
+
+@media (max-width: 335px) {
+  .wrapper {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+}
+
+@media (max-width: 355px) {
+  .wrapper {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 340px) {
+  .wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

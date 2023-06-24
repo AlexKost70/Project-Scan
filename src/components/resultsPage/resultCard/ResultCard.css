@@ -76,4 +76,64 @@
     font-size: 16px;
     line-height: 19px;
     color: #949494;
+    margin-bottom: -0.5px;
+}
+
+@media (max-width: 645px) {
+    .resultcard {
+        width: 335px;
+        height: 694px;
+        padding: 19px 14px 0 24px;
+    }
+
+    .resultcard .card-info,
+    .resultcard .card-info a {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .resultcard .card-info a {
+        margin-left: 9px;
+    }
+
+    .resultcard .card-title {
+        font-size: 19px;
+        line-height: 23px;
+        margin-top: 21px;
+        margin-bottom: 53px;
+    }
+
+    .resultcard .card-badges {
+        flex-wrap: wrap;
+        margin-top: -33px;
+        margin-bottom: 13px;
+    }
+
+    .resultcard .card-badge {
+        width: 132px;
+        height: 20px;
+        box-sizing: border-box;
+        font-size: 10px;
+        line-height: 12px;
+        white-space: nowrap;
+        padding: 0 12px;
+        margin: 0;
+    }
+
+    .resultcard .card-img {
+        width: 297px;
+        height: 158px;
+        margin-bottom: 18px;
+    }
+
+    .resultcard .card-description {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .resultcard .card-footer p {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }

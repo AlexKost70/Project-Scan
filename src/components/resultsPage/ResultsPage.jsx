@@ -5,6 +5,7 @@ import mainImage from "./resultspage.png";
 import ResultsSimpleSlider from "./resultsSimpleSlider/resultsSimpleSlider";
 import ResultCard from "./resultCard/ResultCard";
 import Button from "../button/Button";
+import MobileResultsSimpleSlider from "./mobileResultsSimpleSlider/mobileResultsSimpleSlider";
 const cards = [
     {   
         "date": "13.09.2021",
@@ -251,6 +252,7 @@ export default function ResultsPage() {
                     >Общая сводка</Title>
                     <p>Найдено {"4221".toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} вариантов</p>
                     <ResultsSimpleSlider />
+                    <MobileResultsSimpleSlider />
                 </div>
                 <div className="resultsblock">
                     <Title 

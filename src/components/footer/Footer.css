@@ -33,3 +33,35 @@ footer .right-side p {
     font-size: 12px;
     line-height: 15px;
 }
+
+@media (max-width: 740px) {
+    footer .wrapper {
+        height: 100%;
+    }
+
+    footer img {
+        width: 111px;
+        height: 111px;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 740px) {
+    footer .wrapper {
+        height: 100%;
+    }
+
+    footer img {
+        width: 111px;
+        height: 111px;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 310px) {
+    footer img {
+        width: 90px;
+        height: 90px;
+        align-self: flex-start;
+    }
+}

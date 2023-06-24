@@ -33,10 +33,18 @@ const SimpleSlider = () => {
     return (
         <Swiper
             spaceBetween={30}
-            slidesPerView={3}
+            slidesPerView="auto"
             navigation={false}
             className="slider"
             ref={swiperRef}
+            breakpoints={{
+                745: {
+                    slidesPerView: 2
+                }, 
+                410: {
+                    slidesPerView: 1
+                }
+            }}
         >
             {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>

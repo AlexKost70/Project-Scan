@@ -13,6 +13,7 @@ header .wrapper {
 
 header .right-side {
     display: flex;
+    align-items: center;
 }
 
 header nav {
@@ -61,6 +62,7 @@ header .profile-signedup {
 }
 
 header .profile .stats {
+    box-sizing: border-box;
     font-size: 10px;
     line-height: 12px;
     color: rgba(0, 0, 0, 0.4);
@@ -127,4 +129,294 @@ header .profile .info a {
     line-height: 12px;
     color: #000000;
     opacity: 0.4;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+    display: flex;
+    position: fixed;
+}
+
+.menu-button-container {
+    display: none;
+    width: 30px;
+    height: 25px;
+}
+
+.menu-button {
+    margin-top: 34px;
+    cursor: pointer;
+}
+
+.menu-button span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #029491;
+    margin-bottom: 5px;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #029491;
+    font-size: 16px;
+    line-height: 19px;
+    z-index: 2;
+}
+
+.menu .menu-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu img {
+    width: 111px;
+    height: 111px;
+    margin-left: 14px;
+}
+
+.menu .menu-button-container {
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    margin-top: 37px;
+    margin-right: 28px;
+}
+
+.menu .menu-button {
+    margin-top: 15px;
+}
+
+.menu .menu-button span {
+    background: #ffffff;
+}
+
+.menu .menu-button span:first-child {
+    transform: rotate(45deg);
+}
+
+.menu .menu-button span:last-child {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.menu .menu-nav {
+    margin-top: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu .menu-nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.menu .menu-nav a {
+    color: #FFFFFF;
+}
+
+.menu .profile-mobile {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu .profile-mobile>a:first-child {
+    color: #FFFFFF;
+    opacity: 0.4;
+}
+
+.menu .profile-mobile .signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    width: 295px;
+    height: 51.96px;
+    background: #7CE3E1;
+    border-radius: 5px;
+}
+
+.menu .profile-mobile .info {
+    display: flex;
+}
+
+.menu .profile-mobile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.menu .profile-mobile .info div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+}
+
+.menu .profile-mobile .info p,
+.menu .profile-mobile .info a {
+    color: #000000;
+}
+
+.menu .profile-mobile .info p {
+    opacity: 0.7;
+}
+
+.menu .profile-mobile .info a {
+    opacity: 0.4;
+}
+
+@media (max-width: 1250px) {
+    .profile:not(:has(.info)) {
+        margin-left: 251px;
+    }
+
+    header .profile .info {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .profile:not(:has(.info)) {
+        margin-left: 201px;
+    }
+
+    header .profile .info {
+        width: 150px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .profile:not(:has(.info)) {
+        margin-left: 166px;
+    }
+
+    header .profile-signedup {
+        margin-left: 90px;
+    }
+}
+
+@media (max-width: 915px) {
+    .profile:not(:has(.info)) {
+        margin-left: 136px;
+    }
+
+    header .profile .info {
+        width: 140px;
+    }
+
+    header .profile-signedup {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 830px) {
+    .profile:not(:has(.info)) {
+        margin-left: 116px;
+    }
+    header .profile-signedup {
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 810px) {
+    header nav {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 770px) {
+    .profile:not(:has(.info)) {
+        margin-left: 96px;
+    }
+    header .profile-signedup {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 740px) {
+    header img {
+        width: 111px;
+        height: 93px;
+    }
+    header .right-side .hide-mobile {
+        display: none;
+    }
+
+    header .menu-button-container {
+        display: block;
+    }
+}
+
+@media (max-width: 460px) {
+    header .profile .stats {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        padding-top: 5px;
+        font-size: 8px;
+        min-width: 0;
+        width: 132px;
+        height: 75px;
+    }
+
+    header .profile .stats span {
+        display: block;
+        margin: 0;
+    }
+
+    header .profile-signedup {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    header .wrapper {
+        margin-left: 14px;
+        margin-right: 26px;
+    }
+}
+
+@media (max-width: 335px) {
+    header .wrapper {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+}
+
+@media (max-width: 325px) {
+    header .wrapper {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 310px) {
+    header img {
+        width: 90px;
+        height: 90px;
+        align-self: flex-start;
+    }
 }

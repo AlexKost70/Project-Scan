@@ -1,4 +1,5 @@
 import React from "react";
+import "./Title.css"
 
 export default class Title extends React.Component {
     render() {
@@ -6,10 +7,7 @@ export default class Title extends React.Component {
 
         const styles = {
             fontSize: fontSize, 
-            lineHeight: lineHeight,
-            fontFamily: "Ferry, sans-serif",
-            fontStyle: "normal",
-            fontWeight: 900
+            lineHeight: lineHeight
         }
         return (
             <React.Fragment>

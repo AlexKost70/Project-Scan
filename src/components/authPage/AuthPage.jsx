@@ -20,6 +20,11 @@ export default function AuthPage(props) {
                     >Для оформления подписки на тариф, необходимо авторизоваться.</Title>
                     <img src={image} alt="Изображение для страницы авторизации" />
                 </div>
+                <Title 
+                        type="h1" 
+                        fontSize="40px" 
+                        lineHeight="48px" 
+                    >Для оформления подписки<br /> на тариф, необходимо авторизоваться.</Title>
                 <form action="">
                     <div className="decor">
                         <img src={lockImg} alt="" className="lock" />

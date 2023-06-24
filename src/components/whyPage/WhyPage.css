@@ -11,3 +11,23 @@
     height: 100%;
     margin-top: 50px;
 }
+
+@media (max-width: 425px) {
+    .whyblock .title {
+        margin-bottom: 32px;
+    }
+
+    .whyblock .wrapper > img {
+        width: auto;
+        max-width: 100%;
+        height: 392px;
+        object-fit: cover;
+        object-position: -4px;
+        margin-top: 90px;
+        overflow: hidden;
+    }
+
+    .whyblock {
+        padding-bottom: 80px;
+    }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "./resultsSimpleSlider.css";
+import "./mobileResultsSimpleSlider.css";
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.css';
@@ -7,7 +7,7 @@ import arrow from '../../whyPage/simpleSlider/arrow.png';
 
 SwiperCore.use([Navigation]);
 
-const ResultsSimpleSlider = () => {
+const MobileResultsSimpleSlider = () => {
     const slides = [
         {
             id: 1,
@@ -79,48 +79,29 @@ const ResultsSimpleSlider = () => {
     };
 
     return (
-            <div className="relative-wrapper">
+            <div className="relative-wrapper mobile-relative-wrapper">
                 <Swiper
-                    spaceBetween={7}
-                    slidesPerView={9}
+                    spaceBetween={0}
+                    slidesPerView={1}
                     navigation={false}
-                    className="resultsSlider"
+                    className="mobileResultsSlider"
                     ref={swiperRef}
-                    breakpoints={{
-                        1245: {
-                            slidesPerView: 8
-                        },
-                        1105: {
-                            slidesPerView: 7
-                        },
-                        958: {
-                            slidesPerView: 6
-                        },
-                        815: {
-                            slidesPerView: 5
-                        },
-                        670: {
-                            slidesPerView: 4
-                        },
-                        520: {
-                            slidesPerView: 3
-                        }
-                    }}
+                    breakpoints={{}}
                 >
-                    <SwiperSlide key={0}>
-                        <tr className="slide">
-                            <td>Период</td>
-                            <td>Всего</td>
-                            <td>Риски</td>
-                        </tr>
-                    </SwiperSlide>
                     {slides.map((slide) => (
                     <SwiperSlide key={slide.id}>
-                        <tr className="slide">
-                            <td>{slide.date}</td>
-                            <td>{slide.total}</td>
-                            <td>{slide.risks}</td>
-                        </tr>
+                        <table className="slide">
+                            <tr>
+                                <td>Период</td>
+                                <td>Всего</td>
+                                <td>Риски</td>
+                            </tr>
+                            <tr>
+                                <td>{slide.date}</td>
+                                <td>{slide.total}</td>
+                                <td>{slide.risks}</td>
+                            </tr>
+                        </table>
                     </SwiperSlide>
                     ))}
                 </Swiper>
@@ -130,4 +111,4 @@ const ResultsSimpleSlider = () => {
     );
 };
 
-export default ResultsSimpleSlider;
+export default MobileResultsSimpleSlider;

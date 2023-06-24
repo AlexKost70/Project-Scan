@@ -63,15 +63,15 @@ export default function SearchPage() {
                             </div>
                             <div className="right-side">
                                 <div className="checkbox">
-                                    <input type="checkbox" name="maxsign" id="maxsign" />
+                                    <input type="checkbox" name="maxsign" id="maxsign" defaultChecked={true} />
                                     <label htmlFor="maxsign">Признак максимальной полноты</label>
                                 </div>
                                 <div className="checkbox">
-                                    <input type="checkbox" name="mentionbusiness" id="mentionbusiness" />
+                                    <input type="checkbox" name="mentionbusiness" id="mentionbusiness" defaultChecked={true} />
                                     <label htmlFor="mentionbusiness">Упоминания в бизнес-контексте</label>
                                 </div>
                                 <div className="checkbox">
-                                    <input type="checkbox" name="mainrole" id="mainrole" />
+                                    <input type="checkbox" name="mainrole" id="mainrole" defaultChecked={true} />
                                     <label htmlFor="mainrole">Главная роль в публикации</label>
                                 </div>
                                 <div className="checkbox">
@@ -83,7 +83,7 @@ export default function SearchPage() {
                                     <label htmlFor="techmarketnews">Включать технические новости рынков</label>
                                 </div>
                                 <div className="checkbox">
-                                    <input type="checkbox" name="announces" id="announces" />
+                                    <input type="checkbox" name="announces" id="announces" defaultChecked={true} />
                                     <label htmlFor="announces">Включать анонсы и календари</label>
                                 </div>
                                 <div className="checkbox">

@@ -8,6 +8,10 @@
     justify-content: space-between;
 }
 
+.authpage .wrapper > .title {
+    display: none;
+}
+
 .authpage .left-side {
     max-width: 750px;
     display: flex;
@@ -121,7 +125,8 @@
 
 .authpage form .loginwith .services {
     display: flex;
-    margin-top: 21px;
+    margin-top: 15px;
+    gap: 10px;
 }
 
 .authpage form .loginwith a {
@@ -133,10 +138,100 @@
     height: 31px;
     border: 1px solid rgba(89, 112, 255, 0.51);
     border-radius: 3px;
-    margin-right: 10px;
 }
 
 .authpage form .loginwith img {
     width: 59px;
     height: auto;
 }
+
+@media (max-width: 1320px) {
+    .authpage .left-side {
+        max-width: 710px;
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 960px) {
+    .authpage .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .authpage .wrapper > .title {
+        display: inline;
+        text-align: center;
+    }
+
+    .authpage .left-side {
+        margin-right: 0;
+        order: 1;
+    }
+
+    .authpage .left-side > .title {
+        display: none;
+    }
+
+    .authpage .left-side img {
+        margin-left: 0;
+    }
+
+    .authpage form {
+        margin: 80px 0 49px 0;
+    }
+
+    .authpage form .lock {
+        top: -100px;
+        left: 65px;
+        z-index: -1;
+    }
+}
+
+@media (max-width: 465px) {
+    .authpage {
+        padding-top: 31px;
+    }
+
+    .authpage .wrapper > .title {
+        text-align: left;
+        align-self: start;
+        font-size: 22px !important;
+        line-height: 26px !important;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .authpage form {
+        margin-top: 126px;
+        width: 335px;
+        height: 504px;
+        font-size: 14px;
+        line-height: 17px;
+        padding: 25px 15px 0 15px;
+    }
+
+    .authpage .tabs .tab::after {
+        width: 182px;
+    }
+
+    .authpage .tabs .tab-active::after {
+        width: 103px;
+    }
+
+    .authpage form input {
+        width: 305px;
+        height: 43px;
+    }
+
+    .authpage form .button  {
+        margin-top: 34px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .authpage form .loginwith {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+

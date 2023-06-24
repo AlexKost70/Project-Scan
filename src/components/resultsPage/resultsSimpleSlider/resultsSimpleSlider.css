@@ -65,3 +65,15 @@
     right: -10px;
     transform: rotate(180deg);
 }
+
+@media (max-width: 645px) {
+    .resultsSlider {
+        margin-bottom: 57px;
+    }
+}
+
+@media (max-width: 405px) {
+    .relative-wrapper {
+        display: none;
+    }
+}
