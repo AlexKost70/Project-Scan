@@ -3,14 +3,20 @@ import "./TariffCard.css";
 import Button from "../../button/Button";
 
 export default function TariffCard(props) {
-    const { color, title, titleDesc, imgName, badgeText, price, oldPrice, installments, includesArr, isPrimary } = props;
+    const { color, title, titleDesc, imgName, isCurrent, price, oldPrice, installments, includesArr } = props;
     let { headerTextColor } = props;
     if (headerTextColor === undefined) {
         headerTextColor = "#000000";
     }
 
+    let border;
+
+    if (isCurrent) {
+        border = "2px solid " + color;
+    }
+
     return(
-        <div className="card">
+        <div className="card" style={{border: border}}>
             <div className="card-header" style={{backgroundColor: color, color: headerTextColor}}>
                 <div className="left">
                     <p className="card-title">{title}</p>
@@ -19,7 +25,7 @@ export default function TariffCard(props) {
                 <img src={require(`./../${imgName}.png`)} alt="Изображение карточки" />
             </div>
             <div className="card-main">
-                { badgeText !== undefined ? <p className="badge">{badgeText}</p> : null }
+                { isCurrent ? <p className="badge">Текущий тариф</p> : null }
                 <p className="price">{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽ <span>{oldPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽</span></p>
                 { installments !== undefined ? <p className="installments">или {installments} ₽/мес. при рассрочке на 24 мес.</p> : null }
                 <p className="includes">В тариф входит:</p>
@@ -28,8 +34,8 @@ export default function TariffCard(props) {
                         return <li>{item}</li>
                     })}
                 </ul>
-                { isPrimary ? <Button type="button" stylization="primary" disabled={false}>Подробнее</Button> 
-                : <Button type="button" stylization="secondary" disabled={false}>Перейти в личный кабинет</Button> }
+                { isCurrent ? <Button type="button" stylization="secondary" disabled={false}>Перейти в личный кабинет</Button>
+                : <Button type="button" stylization="primary" disabled={false}>Подробнее</Button> }
             </div>
         </div>
     )

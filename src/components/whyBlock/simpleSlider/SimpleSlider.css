@@ -24,7 +24,7 @@
 }
 
 .slider .swiper-slide {
-    width: 400px;
+    width: 400px !important;
 }
 
 .slider .slide {
@@ -70,7 +70,7 @@
 
 @media (max-width: 1360px) {
     .slider .swiper-slide {
-        width: 390px;
+        width: 390px !important;
     }
 
     .slider .custom-button-next {
@@ -98,13 +98,13 @@
 
 @media (max-width: 1335px) {
     .slider .swiper-slide {
-        width: 385px;
+        width: 385px !important;
     }
 }
 
 @media (max-width: 1325px) {
     .slider .swiper-slide {
-        width: 380px;
+        width: 380px !important;
     }
 
     .slider .custom-button-next {
@@ -132,7 +132,7 @@
 
 @media (max-width: 1305px) {
     .slider .swiper-slide {
-        width: 375px;
+        width: 375px !important;
     }
 
     .slider .custom-button-next {
@@ -148,7 +148,7 @@
 
 @media (max-width: 1290px) {
     .slider .swiper-slide {
-        width: 370px;
+        width: 370px !important;
     }
 
     .slider .custom-button-next {
@@ -170,7 +170,7 @@
 
 @media (max-width: 1275px) {
     .slider .swiper-slide {
-        width: 365px;
+        width: 365px !important;
     }
 
     .slider .custom-button-next {
@@ -192,7 +192,7 @@
 
 @media (max-width: 1260px) {
     .slider .swiper-slide {
-        width: 360px;
+        width: 360px !important;
     }
 
     .slider .custom-button-next {
@@ -214,7 +214,7 @@
 
 @media (max-width: 1245px) {
     .slider .swiper-slide {
-        width: 355px;
+        width: 355px !important;
     }
 
     .slider .custom-button-next {
@@ -236,7 +236,7 @@
 
 @media (max-width: 1230px) {
     .slider .swiper-slide {
-        width: 350px;
+        width: 350px !important;
     }
 
     .slider .custom-button-next {
@@ -258,7 +258,7 @@
 
 @media (max-width: 1215px) {
     .slider .swiper-slide {
-        width: 345px;
+        width: 345px !important;
     }
 
     .slider .custom-button-next {
@@ -280,7 +280,7 @@
 
 @media (max-width: 1200px) {
     .slider .swiper-slide {
-        width: 340px;
+        width: 340px !important;
     }
 
     .slider .custom-button-next {
@@ -302,7 +302,7 @@
 
 @media (max-width: 1185px) {
     .slider .swiper-slide {
-        width: 335px;
+        width: 335px !important;
     }
 
     .slider .custom-button-next {
@@ -324,7 +324,7 @@
 
 @media (max-width: 1170px) {
     .slider .swiper-slide {
-        width: 330px;
+        width: 330px !important;
     }
 
     .slider .custom-button-next {
@@ -346,7 +346,7 @@
 
 @media (max-width: 1155px) {
     .slider .swiper-slide {
-        width: 325px;
+        width: 325px !important;
     }
 
     .slider .custom-button-next {
@@ -368,7 +368,7 @@
 
 @media (max-width: 1140px) {
     .slider .swiper-slide {
-        width: 320px;
+        width: 320px !important;
     }
 
     .slider .custom-button-next {
@@ -390,7 +390,7 @@
 
 @media (max-width: 1125px) {
     .slider .swiper-slide {
-        width: 315px;
+        width: 315px !important;
     }
 
     .slider .custom-button-next {
@@ -412,7 +412,7 @@
 
 @media (max-width: 1110px) {
     .slider .swiper-slide {
-        width: 310px;
+        width: 310px !important;
     }
 
     .slider .custom-button-next {
@@ -434,7 +434,7 @@
 
 @media (max-width: 1095px) {
     .slider .swiper-slide {
-        width: 305px;
+        width: 305px !important;
     }
 
     .slider .custom-button-next {
@@ -456,7 +456,7 @@
 
 @media (max-width: 1080px) {
     .slider .swiper-slide {
-        width: 300px;
+        width: 300px !important;
     }
 
     .slider .custom-button-next {
@@ -478,7 +478,7 @@
 
 @media (max-width: 1065px) {
     .slider .swiper-slide {
-        width: 298px;
+        width: 298px !important;
     }
 
     .slider .custom-button-next {

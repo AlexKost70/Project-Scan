@@ -33,7 +33,7 @@ const SimpleSlider = () => {
     return (
         <Swiper
             spaceBetween={30}
-            slidesPerView="auto"
+            slidesPerView={3}
             navigation={false}
             className="slider"
             ref={swiperRef}

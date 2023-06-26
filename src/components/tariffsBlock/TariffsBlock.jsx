@@ -9,7 +9,7 @@ const TarrifCards = [
         title: "Beginner",
         titleDesc: "Для небольшого исследования",
         imgName: "card1",
-        badgeText: "Текущий тариф",
+        isCurrent: true,
         price: 799,
         oldPrice: 1200,
         installments: 150,
@@ -18,7 +18,6 @@ const TarrifCards = [
             "Безопасная сделка",
             "Поддержка 24/7"
         ],
-        isPrimary: false
     },
     {
         color: "#7CE3E1",
@@ -33,7 +32,6 @@ const TarrifCards = [
             "Экспорт истории",
             "Рекомендации по приоритетам"
         ],
-        isPrimary: true
     },
     {
         color: "#000000",
@@ -48,7 +46,6 @@ const TarrifCards = [
             "Безлимитное количество запросов",
             "Приоритетная поддержка"
         ],
-        isPrimary: true
     }
 ]
 
@@ -70,12 +67,11 @@ export default function TariffsBlock() {
                                 title={card.title}
                                 titleDesc={card.titleDesc}
                                 imgName={card.imgName}
-                                badgeText={card.badgeText}
+                                isCurrent={card.isCurrent}
                                 price={card.price}
                                 oldPrice={card.oldPrice}
                                 installments={card.installments}
                                 includesArr={card.includesArr}
-                                isPrimary={card.isPrimary}
                                 headerTextColor={card.headerTextColor}
                             />
                             )
