@@ -1,14 +1,14 @@
 import React from "react"
-import "./AuthPage.css";
+import "./AuthBlock.css";
 import Title from "../title/Title";
-import image from "./authpage.png";
+import image from "./authblock.png";
 import Button from "../button/Button";
 import lockImg from "./lock.svg";
 import googleLogo from "./google.png";
 import facebookLogo from "./facebook.png";
 import yandexLogo from "./yandex.png";
 
-export default function AuthPage(props) {
+export default function AuthBlock(props) {
     return(
         <main className="authpage">
             <div className="wrapper">
@@ -30,8 +30,8 @@ export default function AuthPage(props) {
                         <img src={lockImg} alt="" className="lock" />
                     </div>
                     <div className="tabs">
-                        <a href="#" class="tab tab-active">Войти</a>
-                        <a href="#" class="tab">Зарегистрироваться</a>
+                        <a href="#" className="tab tab-active">Войти</a>
+                        <a href="#" className="tab">Зарегистрироваться</a>
                     </div>
                     <label htmlFor="login">
                         Логин или номер телефона:
@@ -50,9 +50,9 @@ export default function AuthPage(props) {
                     <div className="loginwith">
                         <p>Войти через:</p>
                         <div className="services">
-                            <a href=""><img src={googleLogo} alt="" /></a>
-                            <a href=""><img src={facebookLogo} alt="" /></a>
-                            <a href=""><img src={yandexLogo} alt="" /></a>
+                            <a href="#"><img src={googleLogo} alt="" /></a>
+                            <a href="#"><img src={facebookLogo} alt="" /></a>
+                            <a href="#"><img src={yandexLogo} alt="" /></a>
                         </div>
                     </div>
                 </form>

@@ -3,7 +3,7 @@ import "./resultsSimpleSlider.css";
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.css';
-import arrow from '../../whyPage/simpleSlider/arrow.png';
+import arrow from '../../whyBlock/simpleSlider/arrow.png';
 
 SwiperCore.use([Navigation]);
 

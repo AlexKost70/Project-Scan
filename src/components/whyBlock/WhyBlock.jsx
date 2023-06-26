@@ -1,10 +1,10 @@
 import React from "react";
 import Title from "../title/Title";
-import "./WhyPage.css";
+import "./WhyBlock.css";
 import SimpleSlider from "./simpleSlider/SimpleSlider";
-import image from "./whypage.png";
+import image from "./whyblock.png";
 
-export default function WhyPage() {
+export default function WhyBlock() {
     return(
         <div className="whyblock">
             <div className="wrapper">

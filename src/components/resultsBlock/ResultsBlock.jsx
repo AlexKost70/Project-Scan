@@ -1,5 +1,5 @@
 import React from "react";
-import "./ResultsPage.css";
+import "./ResultsBlock.css";
 import Title from "../title/Title";
 import mainImage from "./resultspage.png";
 import ResultsSimpleSlider from "./resultsSimpleSlider/resultsSimpleSlider";

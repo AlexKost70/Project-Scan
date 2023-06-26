@@ -1,5 +1,5 @@
 import React from "react"
-import "./TariffsPage.css";
+import "./TariffsBlock.css";
 import TariffCard from "./tariffCard/TariffCard";
 import Title from "../title/Title";
 
@@ -52,7 +52,7 @@ const TarrifCards = [
     }
 ]
 
-export default function TariffsPage() {
+export default function TariffsBlock() {
     return(
         <div className="tariffsblock">
             <div className="wrapper">

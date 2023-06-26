@@ -3,6 +3,7 @@ import logo from "./header-logo.svg";
 import loading from "./loading.svg";
 import mobileLogo from "./../footer/footer-logo.svg";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return(
@@ -11,16 +12,16 @@ export default function Header() {
                 <img src={logo} alt="Логотип компании СКАН" />
                 <div className="right-side">
                     <nav class="hide-mobile">
-                        <a href="#">Главная</a>
+                        <Link to="/">Главная</Link>
                         <a href="#">Тарифы</a>
                         <a href="#">FAQ</a>
                     </nav>
-                    { false ?
+                    { true ?
                         (
                         <div className="profile hide-mobile">
                             <a href="#" className="signup">Зарегистрироваться</a>
                             <span className="divider"></span>
-                            <a href="#" className="signin">Войти</a>
+                            <Link to="/login">Войти</Link>
                         </div>
                         ) :
                         (
@@ -61,7 +62,7 @@ export default function Header() {
                     </div>
                     <nav className="menu-nav">
                         <ul>
-                            <li><a href="">Главная</a></li>
+                            <li><Link to="/">Главная</Link></li>
                             <li><a href="">Тарифы</a></li>
                             <li><a href="">FAQ</a></li>
                         </ul>
@@ -71,7 +72,7 @@ export default function Header() {
                             (
                                 <div className="profile-mobile">
                                     <a href="#">Зарегистрироваться</a>
-                                    <a href="#" className="signin">Войти</a>
+                                    <Link to="/login" className="signin">Войти</Link>
                                 </div>
                             ) :
                             (

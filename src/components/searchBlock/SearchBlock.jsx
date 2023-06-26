@@ -1,12 +1,12 @@
 import React from "react";
-import "./SearchPage.css";
+import "./SearchBlock.css";
 import Title from "../title/Title";
 import Button from "../button/Button";
-import mainImage from "./searchpage.png";
+import mainImage from "./searchblock.png";
 import documentImage from "./document.png";
 import foldersImage from "./folders.png";
 
-export default function SearchPage() {
+export default function SearchBlock() {
     return(
         <main className="searchpage">
             <div className="wrapper">

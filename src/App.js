@@ -1,20 +1,24 @@
 import './App.css';
-import Header from './components/header/Header';
-import Main from './components/mainPage/MainPage';
-import TariffsPage from './components/tariffsPage/TariffsPage';
-import WhyPage from './components/whyPage/WhyPage';
-import Footer from './components/footer/Footer';
-import AuthPage from './components/authPage/AuthPage';
-import SearchPage from './components/searchPage/SearchPage';
-import ResultsPage from './components/resultsPage/ResultsPage';
+import { Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './hoc/AuthProvider';
+import Layout from './components/Layout';
+import Homepage from './pages/Homepage';
+import Loginpage from './pages/Loginpage';
+import Searchpage from './pages/Searchpage';
+import Resultspage from './pages/Resultspage';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <ResultsPage />
-      <Footer />
-    </div>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          <Route path="login" element={<Loginpage />} />
+          <Route path="search" element={<Searchpage />} />
+          <Route path="results" element={<Resultspage />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   );
 }
 
