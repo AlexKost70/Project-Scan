@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import Loginpage from './pages/Loginpage';
 import Searchpage from './pages/Searchpage';
 import Resultspage from './pages/Resultspage';
+import Notfoundpage from './pages/Notfoundpage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="login" element={<Loginpage />} />
           <Route path="search" element={<Searchpage />} />
           <Route path="results" element={<Resultspage />} />
+          <Route path="*" element={<Notfoundpage />} />
         </Route>
       </Routes>
     </AuthProvider>
