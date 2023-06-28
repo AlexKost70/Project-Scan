@@ -3,9 +3,10 @@ import useAuth from "../hook/useAuth";
 
 const RequireNotAuth = ({children}) => {
     const location = useLocation();
-    // const user = useAuth();
-    const user = true;
-    if (user) {
+    const { auth } = useAuth();
+    const login = auth.login;
+
+    if (login) {
         return <Navigate to="/" state={{from: location}} />
     }
 

@@ -1,22 +1,30 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext({});
 
-export const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null);
+export const AuthProvider = ({ children }) => {
+    const [auth, setAuth] = useState({});
+    const expireDate = new Date(localStorage.getItem("expire"));
+    const currentDate = new Date();
 
-    const signin = (newUser, cb) => {
-        setUser(newUser);
-        cb();
-    }
-    const signout = (cb) => {
-        setUser(null);
-        cb();
-    }
+    useEffect(() => {
+        if(localStorage.getItem("token") && expireDate.getTime() > currentDate.getTime()) {
+            const login = localStorage.getItem("login");
+            const pwd = localStorage.getItem("pwd");
+            const token = localStorage.getItem("token");
+            setAuth({login, pwd, token});
+        } else if (localStorage.getItem("token") && expireDate.getTime() <= currentDate.getTime()) {
+            localStorage.removeItem("login");
+            localStorage.removeItem("pwd");
+            localStorage.removeItem("token");
+        }
+    }, []);
 
-    const value = {user, signin, signout}
-
-    return <AuthContext.Provider value={value}>
-        {children}
-    </AuthContext.Provider>
+    return(
+        <AuthContext.Provider value={{ auth, setAuth }}>
+            {children}
+        </AuthContext.Provider>
+    )
 }
+
+export default AuthProvider;

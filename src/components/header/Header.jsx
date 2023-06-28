@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../hoc/AuthProvider";
+import axios from "../../api/axios";
 import logo from "./header-logo.svg";
 import loading from "./loading.svg";
 import mobileLogo from "./../footer/footer-logo.svg";
@@ -6,6 +9,50 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+    const { auth, setAuth } = useContext(AuthContext);
+    const mobileMenuCheckbox = useRef();
+
+    const [login, setLogin] = useState(true);
+    const [data, setData] = useState(false);
+    const [companyCount, setCompanyCount] = useState(0);
+    const [companyLimit, setCompanyLimit] = useState(0);
+
+    const logout = (e) => {
+        e.preventDefault();
+        setAuth({});
+        localStorage.removeItem("login");
+        localStorage.removeItem("token");
+        localStorage.removeItem("expire");
+    }
+
+    const getBalance = async () => {
+        const LOGIN_URL = "/account/info";
+        try {
+            const response = await axios.get(LOGIN_URL);
+            setCompanyCount(response?.data?.eventFiltersInfo.usedCompanyCount);
+            setCompanyLimit(response?.data?.eventFiltersInfo.companyLimit);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    const closeMobileMenu = (e) => {
+        e.preventDefault();
+        mobileMenuCheckbox.current.checked = false;
+    }
+
+    useEffect(() => {
+        if(auth.login) {
+            setLogin(true);
+            if(getBalance()) {
+                setData(true);
+            }
+        } else {
+            setLogin(false);
+        }
+    })
+
     return(
         <header>
             <div className="wrapper">
@@ -16,7 +63,7 @@ export default function Header() {
                         <a href="#">Тарифы</a>
                         <a href="#">FAQ</a>
                     </nav>
-                    { true ?
+                    { !login ?
                         (
                         <div className="profile hide-mobile">
                             <a href="#" className="signup">Зарегистрироваться</a>
@@ -27,14 +74,19 @@ export default function Header() {
                         (
                         <div className="profile profile-signedup">
                             <div className="stats">
-                                <p>Использовано компаний <span>34</span></p>
-                                <p>Лимит по компаниям <span>100</span></p>
-                                {/* <img src={loading} /> */}
+                                {
+                                    data ? 
+                                    <React.Fragment>
+                                        <p>Использовано компаний <span>{companyCount}</span></p>
+                                        <p>Лимит по компаниям <span>{companyLimit}</span></p>
+                                    </React.Fragment> :
+                                    <img src={loading} />
+                                }
                             </div>
                             <div className="info hide-mobile">
                                 <div>
-                                    <p>Алексей А.</p>
-                                    <a href="#">Выйти</a>
+                                    <p>{auth.login}</p>
+                                    <a href="#" onClick={logout}>Выйти</a>
                                 </div>
                                 <img src="./userpic.png" alt="Фото профиля" />
                             </div>
@@ -42,8 +94,8 @@ export default function Header() {
                         )
                     }
                 </div>
-                <input id="menu-toggle" type="checkbox" />
-                <label class="menu-button-container" for="menu-toggle">
+                <input id="menu-toggle" ref={mobileMenuCheckbox} type="checkbox" />
+                <label class="menu-button-container" htmlFor="menu-toggle">
                     <div class='menu-button'>
                         <span></span>
                         <span></span>
@@ -53,7 +105,7 @@ export default function Header() {
                 <div class="menu">
                     <div className="menu-header">
                         <img src={mobileLogo} alt="" />
-                        <label class="menu-button-container" for="menu-toggle">
+                        <label class="menu-button-container" htmlFor="menu-toggle">
                             <div class='menu-button'>
                                 <span></span>
                                 <span></span>
@@ -61,16 +113,16 @@ export default function Header() {
                         </label>
                     </div>
                     <nav className="menu-nav">
-                        <ul>
+                        <ul onClick={closeMobileMenu}>
                             <li><Link to="/">Главная</Link></li>
                             <li><a href="">Тарифы</a></li>
                             <li><a href="">FAQ</a></li>
                         </ul>
                     </nav>
                     <div className="menu-profile">
-                        { false ? 
+                        { !login ? 
                             (
-                                <div className="profile-mobile">
+                                <div className="profile-mobile" onClick={closeMobileMenu}>
                                     <a href="#">Зарегистрироваться</a>
                                     <Link to="/login" className="signin">Войти</Link>
                                 </div>
@@ -79,8 +131,16 @@ export default function Header() {
                                 <div className="profile-mobile">
                                     <div className="info">
                                         <div>
-                                            <p>Алексей А.</p>
-                                            <a href="#">Выйти</a>
+                                            <p>{auth.login}</p>
+                                            <a 
+                                                href="#" 
+                                                onClick={(e) => 
+                                                    {
+                                                        logout(e); 
+                                                        closeMobileMenu(e);
+                                                    }
+                                                }
+                                            >Выйти</a>
                                         </div>
                                         <img src="./userpic.png" alt="Фото профиля" />
                                     </div>

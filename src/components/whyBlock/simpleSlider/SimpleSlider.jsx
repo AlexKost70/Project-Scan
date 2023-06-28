@@ -41,8 +41,8 @@ const SimpleSlider = () => {
                 745: {
                     slidesPerView: 2
                 }, 
-                410: {
-                    slidesPerView: 1
+                390: {
+                    slidesPerView: 1,
                 }
             }}
         >
