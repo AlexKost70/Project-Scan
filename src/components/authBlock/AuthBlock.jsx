@@ -12,7 +12,7 @@ import yandexLogo from "./yandex.png";
 
 const LOGIN_URL = "/account/login";
 
-export default function AuthBlock(props) {
+export default function AuthBlock() {
     const { setAuth } = useContext(AuthContext);
     const loginRef = useRef();
     const pwdRef = useRef();
@@ -28,10 +28,6 @@ export default function AuthBlock(props) {
     useEffect(() => {
         loginRef.current.focus();
     }, []);
-
-    useEffect(() => {
-        setErrMsg("");
-    }, [login, pwd]);
 
     const handleInputLogin = (e) => {
         setLogin(e.target.value);
@@ -138,7 +134,7 @@ export default function AuthBlock(props) {
                             onChange={handleInputPwd}
                             value={pwd} 
                             className={pwdErr ? "error" : null} 
-                            required 
+                            required
                         />
                     </label>
                     <p className="errMsg errPwd">{errMsg}</p>

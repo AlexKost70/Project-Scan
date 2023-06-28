@@ -50,6 +50,7 @@ export default function Header() {
             }
         } else {
             setLogin(false);
+            setData(false);
         }
     })
 

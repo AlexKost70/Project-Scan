@@ -7,7 +7,7 @@ const RequireNotAuth = ({children}) => {
     const login = auth.login;
 
     if (login) {
-        return <Navigate to="/" state={{from: location}} />
+        return <Navigate to="/search" state={{from: location}} />
     }
 
     return children;

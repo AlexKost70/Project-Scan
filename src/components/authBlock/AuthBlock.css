@@ -6,6 +6,7 @@
 .authpage .wrapper {
     display: flex;
     justify-content: space-between;
+    min-height: calc(100vh - 379px);
 }
 
 .authpage .wrapper > .title {

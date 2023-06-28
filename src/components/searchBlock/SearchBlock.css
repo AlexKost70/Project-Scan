@@ -39,6 +39,35 @@
     flex-direction: column;
 }
 
+.searchpage form .left-side .errMsg {
+    height: 18px;
+    margin: 0;
+    color: #FF5959;
+    font-size: 14px;
+    width: 242px;
+    text-align: center;
+}
+
+.searchpage form .left-side .errMsg:nth-of-type(1),
+.searchpage form .left-side .errMsg:nth-of-type(2) {
+    margin-top: -21px;
+}
+
+.searchpage form .left-side .errMsg:nth-of-type(1) {
+    margin-top: -19px;
+    margin-bottom: 11px;
+}
+
+.searchpage form .left-side .errMsg:nth-of-type(2) {
+    margin-top: -25px;
+    margin-bottom: 8px;
+}
+
+.searchpage form .left-side .errMsg:nth-of-type(3) {
+    margin-top: 7px;
+    width: 372px;
+}
+
 .searchpage form .left-side label {
     display: block;
     margin-bottom: 21px;
@@ -51,6 +80,10 @@
     line-height: 30px;
 }
 
+.searchpage form .left-side label sup.error {
+    color: #FF5959;
+}
+
 .searchpage form .left-side label input,
 .searchpage form .left-side label select {
     display: block;
@@ -58,6 +91,13 @@
 
 .searchpage form .left-side label:last-of-type {
     margin-bottom: 30px;
+}
+
+.searchpage form .left-side label input.error,
+.searchpage form .left-side .range input.error {
+    color: #FF5959;
+    border: 1px solid #FF5959;
+    box-shadow: 0px 0px 20px 0px rgba(255, 89, 89, 0.20);
 }
 
 .searchpage form .left-side input::placeholder {
@@ -127,7 +167,7 @@
 
 .searchpage form .right-side .button {
     align-self: flex-end;
-    margin-top: 142px;
+    margin-top: 160px;
     min-width: 305px;
     width: 305px;
     min-height: 59px;
@@ -276,8 +316,17 @@
     }
 
     .searchpage form .left-side label {
-        margin-bottom: 30px;
+        margin-bottom: 21px;
     }
+    
+    .searchpage form .left-side .errMsg:nth-of-type(1) {
+        margin-top: -16px;
+    }
+
+    .searchpage form .left-side .errMsg:nth-of-type(3) {
+        margin-top: 5px;
+    }
+
 
     .searchpage form .left-side input,
     .searchpage form .left-side select,
@@ -312,8 +361,12 @@
     }
 
     .searchpage form .right-side .button {
-        margin-top: 40px;
+        margin-top: 18px;
         width: 335px;
+    }
+
+    .searchpage form .right-side .button + p {
+        align-self: flex-start;
     }
 
     .searchpage .images .images-line {
