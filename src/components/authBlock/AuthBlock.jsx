@@ -57,16 +57,11 @@ export default function AuthBlock() {
 
         try {
             const response = await axios.post(LOGIN_URL, 
-                JSON.stringify({login, password: pwd}),
-                {
-                    headers: { "Authorization": "Bearer YOUR_TOKEN" }
-                }
-            );
+                JSON.stringify({login, password: pwd}));
             const accessToken = response?.data?.accessToken;
             const expire = response?.data?.expire;
             setAuth({login, pwd, accessToken, expire});
             localStorage.setItem("login", login);
-            localStorage.setItem("pwd", pwd);
             localStorage.setItem("token", accessToken);
             localStorage.setItem("expire", expire);
             setLogin('');
