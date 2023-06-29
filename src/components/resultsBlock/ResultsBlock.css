@@ -17,6 +17,10 @@
     margin-top: 44px;
 }
 
+.resultspage .information-block .invisible {
+    visibility: hidden;
+}
+
 .resultspage .information-block .left-side .title {
     max-width: 495px;
     margin-bottom: 36px;
@@ -179,6 +183,13 @@
 @media (max-width: 405px) {
     .resultspage .resultsblock .title {
         margin-top: 57px;
+    }
+}
+
+@media (max-width: 370px) {
+    .resultspage .wrapper {
+        margin: 0;
+        overflow: hidden;
     }
 }
 

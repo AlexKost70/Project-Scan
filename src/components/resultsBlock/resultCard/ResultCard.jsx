@@ -1,32 +1,35 @@
 import React from "react";
 import "./ResultCard.css";
 import Button from "../../button/Button";
+import DOMPurify from 'dompurify';
 
 export default function ResultCard(props) {
-    const { item } = props;
+    const { title, issueDate, sourceName, sourceURL, isTechNews, isAnnouncement, isDigest, description, wordCount } = props;
+
+
     return(
         <div className="resultcard">
             <div className="card-info">
-                <time>{item.date}</time>
-                <a href={item.source.sourceURL}>{item.source.sourceName}</a>
+                <time>{issueDate}</time>
+                <a href={sourceURL}>{sourceName}</a>
             </div>
-            <p className="card-title">{item.title}</p>
+            <p className="card-title">{title}</p>
             <div className="card-badges">
-                { item.attributes.isTechNews ? <div className="card-badge">Технические новости</div> : null }
-                { item.attributes.isAnnouncement ? <div className="card-badge">Анонсы и события</div> : null }
-                { item.attributes.isDigest ? <div className="card-badge">Сводки новостей</div> : null }
+                { isTechNews ? <div className="card-badge">Технические новости</div> : null }
+                { isAnnouncement ? <div className="card-badge">Анонсы и события</div> : null }
+                { isDigest ? <div className="card-badge">Сводки новостей</div> : null }
             </div>
-            <img src={item.imgURL} alt={item.title} className="card-img" />
-            <p className="card-description">{item.description}</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/No_image_available.png" alt={title} className="card-img" />
+            <p className="card-description">{(DOMPurify.sanitize(description)).replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/&lt;…&gt;/g, '').replace(/<[^>]*>?/gm, '')}</p>
             <div className="card-footer">
-                <a href={item.source.sourceURL}>
+                <a href={sourceURL}>
                     <Button
                         type="button"
                         stylization="resultcardbutton"
                         disabled={false}
                     >Читать в источнике</Button>
                 </a>
-                <p className="words">{item.attributes.wordCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} слова</p>
+                <p className="words">{wordCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} слова</p>
             </div>
         </div>
     )

@@ -7,8 +7,10 @@ import mainImage from "./searchblock.png";
 import documentImage from "./document.png";
 import foldersImage from "./folders.png";
 import validateInn from "./validateInn";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBlock() {
+    const navigate = useNavigate();
     const LOGIN_URL = "/objectsearch/histograms";
     const innRef = useRef();
 
@@ -151,7 +153,7 @@ export default function SearchBlock() {
     const makeRequest = () => {
         const startWithDate = new Date(startWith);
         const endWithDate = new Date(endWith);
-        return {
+        const request = {
             "issueDateInterval": {
                 "startDate": startWithDate,
                 "endDate": endWithDate
@@ -209,14 +211,21 @@ export default function SearchBlock() {
                 "riskFactors"
             ]
         }
+        localStorage.setItem("request", JSON.stringify(request));
+        return request;
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(LOGIN_URL, JSON.stringify(makeRequest()));
-            console.log(response.data.data[0]);
-        } catch (err) { 
+            if (response.data.data.length === 0) {
+                setInnErr("Данные не обнаружены");
+            } else {
+                localStorage.setItem("results", JSON.stringify(response.data.data));
+                navigate("/results");
+            }
+        } catch (err) {
             console.log(err);
         }
     }

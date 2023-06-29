@@ -1,5 +1,6 @@
 import React from "react";
 import "./resultsSimpleSlider.css";
+import loading from "../../header/loading.svg";
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.css';
@@ -7,63 +8,22 @@ import arrow from '../../whyBlock/simpleSlider/arrow.png';
 
 SwiperCore.use([Navigation]);
 
-const ResultsSimpleSlider = () => {
-    const slides = [
-        {
-            id: 1,
-            date: "11.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 2,
-            date: "12.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 3,
-            date: "13.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 4,
-            date: "14.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 5,
-            date: "15.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 6,
-            date: "16.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 7,
-            date: "17.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 8,
-            date: "18.09.2021",
-            total: 5,
-            risks: 0
-        },
-        {
-            id: 8,
-            date: "18.09.2021",
-            total: 5,
-            risks: 0
-        }
-    ];
+export function formatDate(str) {
+    let date = new Date(str);
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    if (day < 10) {
+    day = "0" + day;
+    }
+    if (month < 10) {
+    month = "0" + month;
+    }
+    return day + "." + month + "." + year;
+}
+
+const ResultsSimpleSlider = (props) => {
+    const {results} = props;
 
     const swiperRef = React.useRef(null);
 
@@ -114,15 +74,22 @@ const ResultsSimpleSlider = () => {
                             <td>Риски</td>
                         </tr>
                     </SwiperSlide>
-                    {slides.map((slide) => (
-                    <SwiperSlide key={slide.id}>
-                        <tr className="slide">
-                            <td>{slide.date}</td>
-                            <td>{slide.total}</td>
-                            <td>{slide.risks}</td>
-                        </tr>
-                    </SwiperSlide>
-                    ))}
+                    { results !== "loading" ? results[0].data.map((result, index) => (
+                        <SwiperSlide key={index + 1}>
+                            <tr className="slide">
+                                <td>{formatDate(result.date)}</td>
+                                <td>{result.value + results[1].data[index].value}</td>
+                                <td>{results[1].data[index].value}</td>
+                            </tr>
+                        </SwiperSlide>
+                    )) :
+                        <SwiperSlide className="loading">
+                            <div>
+                                <img src={loading} alt="" />
+                                <span>Загружаем данные</span>
+                            </div>
+                        </SwiperSlide>
+                    }
                 </Swiper>
                 <div className="custom-button-prev"><img src={arrow} alt="Кнопка для показа предыдущего слайда" onClick={goPrev} /></div>
                 <div className="custom-button-next"><img src={arrow} alt="Кнопка для показа следующего слайда" onClick={goNext} /></div>

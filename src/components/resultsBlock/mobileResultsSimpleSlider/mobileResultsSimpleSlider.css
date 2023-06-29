@@ -9,6 +9,18 @@
     border-radius: 10px;
 }
 
+.mobileResultsSlider .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.mobileResultsSlider .loading img {
+    width: 36px;
+    height: 36px;
+    animation: loading 2s linear infinite;
+}
+
 .mobileResultsSlider .slide {
     border-collapse: collapse;
     text-align: center;
